@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div id="container">
+        <h1>Add a New Show</h1>
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <form id="form" action="/shows/create" method="post">
+            
+            
+            <table style="width:300px; margin-left: 200px;">
+                    {% csrf_token %}
+                    <tr>
+                        <td><b>Title:</b></td>
+                        <td><input type="text" name='title'></td>
+                    </tr>
+                    <tr>
+                        <td><b>Network:</b></td>
+                        <td><input type="text" name="network"> </td>
+                    </tr>
+                    <tr>
+                        <td><b>Released Date:</b></td>
+                        <td><input type="date" name="released_date"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Description:</b></td>
+                        <td><textarea type="text" name="description"></textarea></td>
+                    </tr>
+                    <td><input type="submit" value="Create"></td>
+                </table>
+                
+        </form>
+        <a style="margin-left:200px;" href="/shows">Go back</a>
+    </div>
+    
+</body>
+</html>

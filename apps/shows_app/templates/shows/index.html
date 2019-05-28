@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+</head>
+<style>
+    body{
+        text-align: center;
+
+    }
+    .table {
+        text-align: center;
+        display: inline-block;
+        margin-left: 230px;
+    }
+    thead{
+        color: black;
+        background-color: rgb(84, 114, 114);
+
+    }
+</style>
+
+<body>
+    <h1> All The Shows</h1>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <td>ID</td>
+            <td>Title</td >
+            <td>Network</td>
+            <td>Released Date</td>
+            <td>Action</td>
+        </thead>
+        <tbody>
+            {% for each in allshow %}
+            <tr>
+                <td>{{each.id}}</td>
+                <td>{{each.title}}</td>
+                <td>{{each.network}}</td>
+                <td>{{each.released_date}}</td>
+                <td><a href="/shows/{{each.id}}">View</a> | <a href="/shows/{{each.id}}/edit">Edit</a> |<a href="/shows/{{each.id}}/delete">Delete</a></td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table> 
+    <br><br>
+    <a href="/shows/new">ADD A NEW SHOW!</a>
+</body>
+
+</html>

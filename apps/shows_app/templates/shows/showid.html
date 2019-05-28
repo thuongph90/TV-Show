@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+</head>
+<style>
+    body {
+        margin-left: 100px;
+    }
+</style>
+
+<body>
+    <a href="/shows">Go back</a>
+    <h1>TV SHOW {{eachshow.id}}</h1>
+
+    <table style="width:300px">
+        <tr>
+            <td><b>Title:</b></td>
+            <td>{{eachshow.title}}</td>
+        </tr>
+        <tr>
+            <td><b>Network:</b></td>
+            <td>{{eachshow.network}}</td>
+        </tr>
+        <tr>
+            <td><b>Released Date:</b></td>
+            <td>{{eachshow.released_date}}</td>
+        </tr>
+        <tr>
+            <td><b>Description:</b></td>
+            <td>{{eachshow.description}}</td>
+        </tr>
+        <tr>
+            <td><b>Last updated:</b></td>
+            <td>{{eachshow.updated_at}}</td>
+        </tr>
+        <tr>
+            <td><a href="/shows/{{eachshow.id}}/edit">Edit</a></td>
+            <td><a href="/shows/{{eachshow.id}}/delete">Delete</a></td>
+        </tr>
+    </table>
+</body>
+
+</html>
